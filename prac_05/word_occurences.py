@@ -14,15 +14,16 @@ def main():
     print_word_occur(word_to_compute, longest_word, words)
 
 
-def convert_to_dict(WORD_TO_COMPUTE, words):
+def convert_to_dict(word_to_compute, words):
     for word in words:
-        number_of_word = WORD_TO_COMPUTE.get(word, 0)
-        WORD_TO_COMPUTE[word] = number_of_word + 1
+        number_of_word = word_to_compute.get(word, 0)
+        word_to_compute[word] = number_of_word + 1
 
 
-def print_word_occur(WORD_TO_COMPUTE, longest_word, words):
+def print_word_occur(word_to_compute, longest_word, words):
     for word in words:
-        print(f"{word:{longest_word}} = {WORD_TO_COMPUTE[word]}")
+        print(f"{word:{longest_word}} = {word_to_compute[word]}")
+
 
 if __name__ == '__main__':
     main()
