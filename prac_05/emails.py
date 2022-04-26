@@ -4,15 +4,13 @@ def main():
     email = input("Email: ")
     while email != "":
         name = extract_name_from_email(email)
-        acceptance = input(f'Is your name {name}? (y/n)')
-        if acceptance != "y" and acceptance != " ":
+        acceptance = input(f'Is your name {name}? (y/n)').lower()
+        if acceptance != "y" and acceptance != "":
             name = input('Name: ')
-
         email_to_name[email] = name
         email = input("Email: ")
-
     for email, name in email_to_name.items():
-        print(f"{name} {email}")
+        print(f"{name:15} ({email})")
 
 
 def extract_name_from_email(email):
@@ -20,18 +18,6 @@ def extract_name_from_email(email):
     parts = designation.split('-')
     name = ' '.join(parts).title()
     return name
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 if __name__ == '__main__':
