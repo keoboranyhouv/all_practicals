@@ -20,6 +20,12 @@ class MilesConverterApp(App):
         result = value * MILES_TO_KM
         self.root.ids.output_label.text = str(result)
 
+    def handle_increment(self, change):
+        """Increment to the input number."""
+        value = self.get_valid_miles() + change
+        self.root.ids.input_number.text = str(value)
+        self.handle_calculate()
+
     def get_valid_miles(self):
         """Check valid input."""
         try:
