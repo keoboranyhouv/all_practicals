@@ -14,6 +14,11 @@ def main():
         if current_menu == 'c':
             print('Taxis available: ')
             display_taxi(taxis)
+            chosen_taxi = int(input('Choose taxi: '))
+            try:
+                current_taxi = taxis[chosen_taxi]
+            except IndexError:
+                print('Invalid taxi choice')
 
 
 
