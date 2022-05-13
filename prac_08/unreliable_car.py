@@ -1,8 +1,8 @@
-from taxi import Taxi
+from car import Car
 import random
 
 
-class UnreliableCar(Taxi):
+class UnreliableCar(Car):
 
     def __init__(self, name, fuel, reliability):
         """Initialise a Taxi instance, based on parent class Car."""
